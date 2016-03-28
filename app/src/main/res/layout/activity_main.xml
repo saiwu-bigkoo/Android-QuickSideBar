@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+    <com.bigkoo.quicksidebar.QuickSideBarTipsView
+        android:id="@+id/quickSideBarTipsView"
+        app:textColor="@android:color/white"
+        app:backgroundColor="@color/colorPrimary"
+        android:layout_toLeftOf="@+id/quickSideBarView"
+        android:layout_width="@dimen/height_quicksidebartips"
+        android:layout_height="match_parent"/>
+
+    <com.bigkoo.quicksidebar.QuickSideBarView
+        android:id="@id/quickSideBarView"
+        app:textColorChoose="@color/colorPrimary"
+        app:textColor="@android:color/black"
+        android:layout_alignParentRight="true"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"/>
+</RelativeLayout>
