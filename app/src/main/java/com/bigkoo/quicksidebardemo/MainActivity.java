@@ -22,6 +22,7 @@ import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 
 import java.lang.reflect.Type;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -55,16 +56,21 @@ public class MainActivity extends AppCompatActivity implements OnQuickSideBarTou
         Gson gson = new Gson();
         LinkedList<City> cities = gson.fromJson(DataConstants.cityDataList, listType);
 
+        ArrayList<String> customLetters = new ArrayList<>();
+
         int position = 0;
         for(City city: cities){
             String letter = city.getFirstLetter();
             //如果没有这个key则加入并把位置也加入
             if(!letters.containsKey(letter)){
                 letters.put(letter,position);
+                customLetters.add(letter);
             }
             position++;
         }
 
+        //不自定义则默认26个字母
+        quickSideBarView.setLetters(customLetters);
         adapter.addAll(cities);
         recyclerView.setAdapter(adapter);
 
