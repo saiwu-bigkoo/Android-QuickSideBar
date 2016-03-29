@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bigkoo.quicksidebar.QuickSideBarTipsView;
 import com.bigkoo.quicksidebar.QuickSideBarView;
 import com.bigkoo.quicksidebar.listener.OnQuickSideBarTouchListener;
+import com.bigkoo.quicksidebardemo.constants.DataConstants;
 import com.bigkoo.quicksidebardemo.model.City;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -48,12 +49,11 @@ public class MainActivity extends AppCompatActivity implements OnQuickSideBarTou
 
         // Add the sticky headers decoration
         CityListWithHeadersAdapter adapter = new CityListWithHeadersAdapter();
-        String cityListData = getResources().getString(R.string.cityListData);
 
         //GSON解释出来
         Type listType = new TypeToken<LinkedList<City>>(){}.getType();
         Gson gson = new Gson();
-        LinkedList<City> cities = gson.fromJson(cityListData, listType);
+        LinkedList<City> cities = gson.fromJson(DataConstants.cityDataList, listType);
 
         int position = 0;
         for(City city: cities){
