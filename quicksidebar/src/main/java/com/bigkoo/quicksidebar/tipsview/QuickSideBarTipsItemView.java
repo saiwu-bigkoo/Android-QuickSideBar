@@ -58,9 +58,9 @@ public class QuickSideBarTipsItemView extends View {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.QuickSideBarView);
 
-            mTextColor = a.getColor(R.styleable.QuickSideBarView_textColor, mTextColor);
-            mBackgroundColor = a.getColor(R.styleable.QuickSideBarView_backgroundColor, mBackgroundColor);
-            mTextSize = a.getFloat(R.styleable.QuickSideBarView_textSize, mTextSize);
+            mTextColor = a.getColor(R.styleable.QuickSideBarView_sidebarTextColor, mTextColor);
+            mBackgroundColor = a.getColor(R.styleable.QuickSideBarView_sidebarBackgroundColor, mBackgroundColor);
+            mTextSize = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
             a.recycle();
         }
 

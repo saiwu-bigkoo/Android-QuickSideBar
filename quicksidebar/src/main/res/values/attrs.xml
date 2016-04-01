@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="QuickSideBarView">
-        <attr name="textColor" format="color|reference"/>
-        <attr name="backgroundColor" format="color|reference"/>
-        <attr name="textColorChoose" format="color|reference"/>
-        <attr name="textSize" format="float"/>
-        <attr name="textSizeChoose" format="float"/>
+        <attr name="sidebarTextColor" format="color|reference"/>
+        <attr name="sidebarBackgroundColor" format="color|reference"/>
+        <attr name="sidebarTextColorChoose" format="color|reference"/>
+        <attr name="sidebarTextSize" format="float"/>
+        <attr name="sidebarTextSizeChoose" format="float"/>
     </declare-styleable>
 </resources>

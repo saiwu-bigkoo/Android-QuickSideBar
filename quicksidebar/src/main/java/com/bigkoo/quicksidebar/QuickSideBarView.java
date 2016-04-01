@@ -58,10 +58,10 @@ public class QuickSideBarView extends View {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.QuickSideBarView);
 
-            mTextColor = a.getColor(R.styleable.QuickSideBarView_textColor, mTextColor);
-            mTextColorChoose = a.getColor(R.styleable.QuickSideBarView_textColorChoose, mTextColorChoose);
-            mTextSize = a.getFloat(R.styleable.QuickSideBarView_textSize, mTextSize);
-            mTextSizeChoose = a.getFloat(R.styleable.QuickSideBarView_textSizeChoose, mTextSizeChoose);
+            mTextColor = a.getColor(R.styleable.QuickSideBarView_sidebarTextColor, mTextColor);
+            mTextColorChoose = a.getColor(R.styleable.QuickSideBarView_sidebarTextColorChoose, mTextColorChoose);
+            mTextSize = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
+            mTextSizeChoose = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSizeChoose, mTextSizeChoose);
             a.recycle();
         }
     }
