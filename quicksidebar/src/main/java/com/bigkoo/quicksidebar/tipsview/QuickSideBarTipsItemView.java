@@ -54,13 +54,13 @@ public class QuickSideBarTipsItemView extends View {
 
         mTextColor = context.getResources().getColor(android.R.color.black);
         mBackgroundColor = context.getResources().getColor(android.R.color.darker_gray);
-        mTextSize = context.getResources().getDimensionPixelSize(R.dimen.textSize_quicksidebartips);
+        mTextSize = context.getResources().getDimension(R.dimen.textSize_quicksidebartips);
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.QuickSideBarView);
 
             mTextColor = a.getColor(R.styleable.QuickSideBarView_sidebarTextColor, mTextColor);
             mBackgroundColor = a.getColor(R.styleable.QuickSideBarView_sidebarBackgroundColor, mBackgroundColor);
-            mTextSize = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
+            mTextSize = a.getDimension(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
             a.recycle();
         }
 

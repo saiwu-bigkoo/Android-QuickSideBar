@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements OnQuickSideBarTou
 
 
     @Override
-    public void onLetterChanged(String letter, int position, int itemHeight) {
-        quickSideBarTipsView.setText(letter, position, itemHeight);
+    public void onLetterChanged(String letter, int position, float y) {
+        quickSideBarTipsView.setText(letter, position, y);
         //有此key则获取位置并滚动到该位置
         if(letters.containsKey(letter)) {
             recyclerView.scrollToPosition(letters.get(letter));

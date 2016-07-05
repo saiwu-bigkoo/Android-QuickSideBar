@@ -4,7 +4,8 @@
         <attr name="sidebarTextColor" format="color|reference"/>
         <attr name="sidebarBackgroundColor" format="color|reference"/>
         <attr name="sidebarTextColorChoose" format="color|reference"/>
-        <attr name="sidebarTextSize" format="float"/>
-        <attr name="sidebarTextSizeChoose" format="float"/>
+        <attr name="sidebarTextSize" format="dimension"/>
+        <attr name="sidebarTextSizeChoose" format="dimension"/>
+        <attr name="sidebarItemHeight" format="dimension"/>
     </declare-styleable>
 </resources>

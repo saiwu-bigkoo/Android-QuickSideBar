@@ -31,8 +31,8 @@ public class QuickSideBarView extends View {
     private int mTextColorChoose;
     private int mWidth;
     private int mHeight;
-    private int mItemHeight;
-    private int mPaddingTop;//顶部留着间距
+    private float mItemHeight;
+    private float mItemStartY;
 
     public QuickSideBarView(Context context) {
         this(context, null);
@@ -53,15 +53,16 @@ public class QuickSideBarView extends View {
         mTextColor = context.getResources().getColor(android.R.color.black);
         mTextColorChoose = context.getResources().getColor(android.R.color.black);
         mTextSize = context.getResources().getDimensionPixelSize(R.dimen.textSize_quicksidebar);
-        mPaddingTop = context.getResources().getDimensionPixelSize(R.dimen.height_quicksidebartips);
         mTextSizeChoose = context.getResources().getDimensionPixelSize(R.dimen.textSize_quicksidebar_choose);
+        mItemHeight = context.getResources().getDimension(R.dimen.height_quicksidebaritem);
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.QuickSideBarView);
 
             mTextColor = a.getColor(R.styleable.QuickSideBarView_sidebarTextColor, mTextColor);
             mTextColorChoose = a.getColor(R.styleable.QuickSideBarView_sidebarTextColorChoose, mTextColorChoose);
-            mTextSize = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
-            mTextSizeChoose = a.getFloat(R.styleable.QuickSideBarView_sidebarTextSizeChoose, mTextSizeChoose);
+            mTextSize = a.getDimension(R.styleable.QuickSideBarView_sidebarTextSize, mTextSize);
+            mTextSizeChoose = a.getDimension(R.styleable.QuickSideBarView_sidebarTextSizeChoose, mTextSizeChoose);
+            mItemHeight = a.getDimension(R.styleable.QuickSideBarView_sidebarItemHeight, mItemHeight);
             a.recycle();
         }
     }
@@ -85,7 +86,7 @@ public class QuickSideBarView extends View {
             Rect rect = new Rect();
             mPaint.getTextBounds(mLetters.get(i), 0, mLetters.get(i).length(), rect);
             float xPos = (int) ((mWidth - rect.width()) * 0.5);
-            float yPos = mItemHeight * i + (int) ((mItemHeight - rect.height()) * 0.5) + mPaddingTop;
+            float yPos = mItemHeight * i + (int) ((mItemHeight - rect.height()) * 0.5) + mItemStartY;
 
 
             canvas.drawText(mLetters.get(i), xPos, yPos, mPaint);
@@ -97,9 +98,9 @@ public class QuickSideBarView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mHeight = getHeight() - mPaddingTop;
+        mHeight = getHeight();
         mWidth = getWidth();
-        mItemHeight = mHeight / mLetters.size();
+        mItemStartY = (mHeight - mLetters.size()*mItemHeight)/2;
     }
 
     @Override
@@ -107,7 +108,7 @@ public class QuickSideBarView extends View {
         final int action = event.getAction();
         final float y = event.getY();
         final int oldChoose = mChoose;
-        final int newChoose = (int) ((y-mPaddingTop) / mHeight * mLetters.size());
+        final int newChoose = (int) ((y - mItemStartY) / mItemHeight);
         switch (action) {
             case MotionEvent.ACTION_UP:
                 mChoose = -1;
@@ -121,7 +122,11 @@ public class QuickSideBarView extends View {
                     if (newChoose >= 0 && newChoose < mLetters.size()) {
                         mChoose = newChoose;
                         if (listener != null) {
-                            listener.onLetterChanged(mLetters.get(newChoose), mChoose, mItemHeight);
+                            //计算位置
+                            Rect rect = new Rect();
+                            mPaint.getTextBounds(mLetters.get(mChoose), 0, mLetters.get(mChoose).length(), rect);
+                            float yPos = mItemHeight * mChoose + (int) ((mItemHeight - rect.height()) * 0.5) + mItemStartY;
+                            listener.onLetterChanged(mLetters.get(newChoose), mChoose, yPos);
                         }
                     }
                     invalidate();
@@ -154,6 +159,10 @@ public class QuickSideBarView extends View {
         return mLetters;
     }
 
+    /**
+     * 设置字母表
+     * @param letters
+     */
     public void setLetters(List<String> letters) {
         this.mLetters = letters;
         invalidate();
