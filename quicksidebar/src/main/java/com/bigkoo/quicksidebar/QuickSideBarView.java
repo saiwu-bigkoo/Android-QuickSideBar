@@ -107,8 +107,7 @@ public class QuickSideBarView extends View {
         final int action = event.getAction();
         final float y = event.getY();
         final int oldChoose = mChoose;
-        final int newChoose = (int) (y / mHeight * mLetters.size());
-
+        final int newChoose = (int) ((y-mPaddingTop) / mHeight * mLetters.size());
         switch (action) {
             case MotionEvent.ACTION_UP:
                 mChoose = -1;
