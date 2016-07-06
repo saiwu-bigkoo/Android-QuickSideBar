@@ -25,9 +25,9 @@ Android-QuickSideBar
         android:layout_height="match_parent" />
     <!-- 这个是浮动的提示 ，配合字母栏实现放大浮动提示滑动到哪个字母-->
     <!--下面的自定义属性都是默认的,可以不写-->
-    <!--app:sidebarBackgroundColor 浮动框颜色—>
-    <!--app:sidebarTextColor 字母颜色—>
-    <!--app:sidebarTextSize 字母尺寸—>
+    <!--app:sidebarBackgroundColor 浮动框颜色-->
+    <!--app:sidebarTextColor 字母颜色-->
+    <!--app:sidebarTextSize 字母尺寸-->
     <com.bigkoo.quicksidebar.QuickSideBarTipsView
         android:id="@+id/quickSideBarTipsView"
         android:layout_width="@dimen/height_quicksidebartips"
@@ -38,11 +38,11 @@ Android-QuickSideBar
         app:sidebarTextSize="@dimen/textSize_quicksidebartips" />
     <!-- 这个是字母栏的提示 -->
     <!--下面的自定义属性都是默认的,可以不写-->
-    <!--app:sidebarItemHeight 每个字母的高度—>
-    <!--app:sidebarTextColor 正常状态下字母颜色—>
-    <!--app:sidebarTextColorChoose 选中了的字母颜色—>
-    <!--app:sidebarTextSize 正常状态字母尺寸—>
-    <!--app:sidebarTextSizeChoose 选中字母尺寸—>
+    <!--app:sidebarItemHeight 每个字母的高度-->
+    <!--app:sidebarTextColor 正常状态下字母颜色-->
+    <!--app:sidebarTextColorChoose 选中了的字母颜色-->
+    <!--app:sidebarTextSize 正常状态字母尺寸-->
+    <!--app:sidebarTextSizeChoose 选中字母尺寸-->
     <com.bigkoo.quicksidebar.QuickSideBarView
         android:id="@id/quickSideBarView"
         android:layout_width="20dp"
