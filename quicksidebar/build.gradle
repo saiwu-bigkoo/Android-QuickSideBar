@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 def siteUrl = 'https://github.com/saiwu-bigkoo/Android-QuickSideBar'                        // #CONFIG# // project homepage
