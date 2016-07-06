@@ -4,7 +4,7 @@ Android-QuickSideBar
 
 ####使用gradle 依赖:
 ```java
-   compile 'com.bigkoo:quicksidebar:1.0.2’
+   compile 'com.bigkoo:quicksidebar:1.0.2'
 ```
 
 ## Demo 图片
