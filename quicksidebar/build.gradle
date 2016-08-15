@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.2"
+version = "1.0.3"
 
 android {
     compileSdkVersion 23
@@ -20,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     lintOptions {
         abortOnError false
     }

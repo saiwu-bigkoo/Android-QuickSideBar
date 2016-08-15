@@ -4,7 +4,7 @@ Android-QuickSideBar
 
 ####使用gradle 依赖:
 ```java
-   compile 'com.bigkoo:quicksidebar:1.0.2'
+   compile 'com.bigkoo:quicksidebar:1.0.3'
 ```
 
 ## Demo 图片
@@ -64,6 +64,10 @@ Android-QuickSideBar
 OnQuickSideBarTouchListener
 ```
 >## 更新说明
+>v1.0.3
+ - 宽高计算使用Measured <br />
+ - 修复默认的字母表写错字母问题 <br />
+
 >v1.0.2
  - 修复选择字母与实际手指触碰错位问题 <br />
  - 字母表由item平均高度变为固定高度并居中  <br />
