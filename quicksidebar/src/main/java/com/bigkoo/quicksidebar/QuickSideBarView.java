@@ -98,8 +98,8 @@ public class QuickSideBarView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mHeight = getHeight();
-        mWidth = getWidth();
+        mHeight = getMeasuredHeight();
+        mWidth = getMeasuredWidth();
         mItemStartY = (mHeight - mLetters.size()*mItemHeight)/2;
     }
 
