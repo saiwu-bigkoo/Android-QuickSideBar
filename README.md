@@ -2,7 +2,7 @@ Android-QuickSideBar
 ==========
 帮助快速查阅对应分组的侧边栏，可以配合任意列表，demo中给出配合RecyclerView(浮动分组使用stickyheadersrecyclerview)。
 
-####使用gradle 依赖:
+#### 使用gradle 依赖:
 ```java
    compile 'com.bigkoo:quicksidebar:1.0.3'
 ```
